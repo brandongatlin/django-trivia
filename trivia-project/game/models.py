@@ -9,12 +9,12 @@ class Category(models.Model):
 
 
 class Question(models.Model):
-    text = models.CharField(default='', max_length=50)
+    text = models.CharField(default='', max_length=256)
     answer = models.CharField(max_length=30, default=None)
     is_true_false = models.BooleanField(default=False)
     options = ArrayField(models.CharField(max_length=30))
     image = models.ImageField(upload_to='questionimages/', default='default.jpg')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)        
 
 
 class Score(models.Model):
