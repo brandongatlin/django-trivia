@@ -1,7 +1,12 @@
-{% for score in top_five %}
-<ul class="list-group list-group-horizontal-sm">
-    <li class="list-group-item">{{ score.score }}</li>
-    <li class="list-group-item flex-fill">{{ score.player_name }}</li>
-    <li class="list-group-item">{{ score.created_at }}</li>
-</ul>
-{% endfor %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 text-center">Top Scores</h1>
+        {% for score in top_five %}
+        <ul class="list-group list-group-horizontal-sm">
+            <li class="list-group-item">{{ score.score }}</li>
+            <li class="list-group-item flex-fill">{{ score.player_name }}</li>
+            <li class="list-group-item">{{ score.created_at }}</li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>

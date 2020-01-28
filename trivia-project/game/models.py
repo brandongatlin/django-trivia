@@ -10,9 +10,9 @@ class Category(models.Model):
 
 class Question(models.Model):
     text = models.CharField(default='', max_length=256)
-    answer = models.CharField(max_length=30, default=None)
+    answer = models.CharField(max_length=50, default=None)
     is_true_false = models.BooleanField(default=False)
-    options = ArrayField(models.CharField(max_length=30))
+    options = ArrayField(models.CharField(max_length=256, default=[True, False]))
     image = models.ImageField(upload_to='questionimages/', default='default.jpg')
     category = models.ForeignKey(Category, on_delete=models.CASCADE)        
 
